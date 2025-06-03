@@ -1,0 +1,20 @@
+{
+  "name": "email-delivery-pkg",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "kafka-pkg": "git+git@github.com:spalx/kafka-pkg.git#1.0.0",
+    "uuid": "^11.0.5",
+    "zod": "^3.25.49"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^22.15.21"
+  }
+}
