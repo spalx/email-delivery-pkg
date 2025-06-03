@@ -6,16 +6,24 @@ const constants_1 = require("../common/constants");
 class SmtpService {
     constructor() {
         this.callbacks = new Map();
-        kafka_pkg_1.kafkaService.subscribe({
-            [constants_1.EmailKafkaTopic.DidSendEmail]: this.handleDidSendEmail.bind(this),
-        });
+        this.isSubscribedToKafka = false;
     }
     sendEmail(dto, callback) {
+        this.subscribeToKafka();
         if (!dto.request_id) {
             dto.request_id = (0, uuid_1.v4)();
         }
         this.setCallback(dto.correlation_id, dto.request_id, callback);
         (0, kafka_pkg_1.sendCorrelatedRequestViaKafka)(constants_1.EmailKafkaTopic.SendEmail, dto);
+    }
+    subscribeToKafka() {
+        if (this.isSubscribedToKafka) {
+            return;
+        }
+        kafka_pkg_1.kafkaService.subscribe({
+            [constants_1.EmailKafkaTopic.DidSendEmail]: this.handleDidSendEmail.bind(this),
+        });
+        this.isSubscribedToKafka = true;
     }
     async handleDidSendEmail(message) {
         const response = message;
