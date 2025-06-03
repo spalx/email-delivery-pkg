@@ -27,11 +27,11 @@ This service depends on kafka-pkg repository.
 | to | string[] | One or more recipient addresses |
 | subject | string | Email subject line |
 | body | string | HTML content of the email |
-| attachments | Record\<string, Blob\> | Filename→Blob map for attachments |
-| inline | Record\<string, Blob\> | Filename→Blob map for inline images |
-| cc | string[] | CC email addresses |
-| bcc | string[] | BCC email addresses |
-| replyTo | string | Reply-To header address |
+| attachments | Record\<string, Blob\>, optional | Filename→Blob map for attachments |
+| inline | Record\<string, Blob\>, optional | Filename→Blob map for inline images |
+| cc | string[], optional | CC email addresses |
+| bcc | string[], optional | BCC email addresses |
+| replyTo | string, optional | Reply-To header address |
 
 
 ### DidSendEmailDTO interface
