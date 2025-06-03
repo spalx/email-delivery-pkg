@@ -2,6 +2,7 @@ import smtpService from './src/services/smtp-service';
 import { CorrelatedRequestDTO, CorrelatedResponseDTO } from 'kafka-pkg';
 import { DidSendEmailDTO, SendEmailDTO } from './src/types/email.dto';
 import { EmailKafkaTopic } from './src/common/constants';
+import { validateSendEmailDTO } from './src/common/email-delivery';
 
 export function sendEmail(
   dto: CorrelatedRequestDTO<SendEmailDTO>,
@@ -16,4 +17,5 @@ export {
   EmailKafkaTopic,
   CorrelatedRequestDTO,
   CorrelatedResponseDTO,
+  validateSendEmailDTO
 };
