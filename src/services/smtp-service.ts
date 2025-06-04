@@ -13,14 +13,17 @@ type Callback = (response: CorrelatedResponseDTO<DidSendEmailDTO>) => void;
 
 class SmtpService {
   private callbacks: Map<string, Map<string, Callback>> = new Map();
-  private isSubscribedToKafka: boolean = false;
+
+  constructor() {
+    kafkaService.subscribe({
+      [EmailKafkaTopic.DidSendEmail]: this.handleDidSendEmail.bind(this),
+    });
+  }
 
   sendEmail(
     dto: CorrelatedRequestDTO<SendEmailDTO>,
     callback?: Callback
   ): void {
-    this.subscribeToKafka();
-
     if (!dto.request_id) {
       dto.request_id = uuidv4();
     }
@@ -28,18 +31,6 @@ class SmtpService {
     this.setCallback(dto.correlation_id, dto.request_id, callback);
 
     sendCorrelatedRequestViaKafka(EmailKafkaTopic.SendEmail, dto);
-  }
-
-  private subscribeToKafka() {
-    if (this.isSubscribedToKafka) {
-      return;
-    }
-
-    kafkaService.subscribe({
-      [EmailKafkaTopic.DidSendEmail]: this.handleDidSendEmail.bind(this),
-    });
-
-    this.isSubscribedToKafka = true;
   }
 
   private async handleDidSendEmail(message: object): Promise<void> {
