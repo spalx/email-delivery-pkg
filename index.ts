@@ -1,4 +1,4 @@
-import { CorrelatedRequestDTO, CorrelatedResponseDTO } from 'kafka-pkg';
+import { CorrelatedRequestDTO, CorrelatedResponseDTO, CorrelatedKafkaResponse } from 'kafka-pkg';
 
 import smtpService from './src/services/smtp-service';
 import { DidSendEmailDTO, SendEmailDTO } from './src/types/email.dto';
@@ -12,5 +12,6 @@ export {
   SendEmailDTO,
   DidSendEmailDTO,
   CorrelatedRequestDTO,
-  CorrelatedResponseDTO
+  CorrelatedResponseDTO,
+  CorrelatedKafkaResponse
 };
