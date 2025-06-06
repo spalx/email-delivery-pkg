@@ -22,7 +22,7 @@ class EmailDeliveryService implements IAppPkg {
       throw new Error('Email delivery service not initialized');
     }
 
-    SendEmailDTOSchema.parse(data);
+    SendEmailDTOSchema.parse(data.data);
 
     return await this.correlatedKafkaRequest.send(data) as CorrelatedResponseDTO<DidSendEmailDTO>;
   }

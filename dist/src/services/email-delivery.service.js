@@ -16,7 +16,7 @@ class EmailDeliveryService {
         if (!this.correlatedKafkaRequest) {
             throw new Error('Email delivery service not initialized');
         }
-        email_delivery_dto_1.SendEmailDTOSchema.parse(data);
+        email_delivery_dto_1.SendEmailDTOSchema.parse(data.data);
         return await this.correlatedKafkaRequest.send(data);
     }
 }
