@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailKafkaTopic = void 0;
-var EmailKafkaTopic;
-(function (EmailKafkaTopic) {
-    EmailKafkaTopic["SendEmail"] = "emaildelivery.sendEmail";
-})(EmailKafkaTopic || (exports.EmailKafkaTopic = EmailKafkaTopic = {}));
+exports.EmailDeliveryKafkaTopic = void 0;
+var EmailDeliveryKafkaTopic;
+(function (EmailDeliveryKafkaTopic) {
+    EmailDeliveryKafkaTopic["SendEmail"] = "emaildelivery.sendEmail";
+})(EmailDeliveryKafkaTopic || (exports.EmailDeliveryKafkaTopic = EmailDeliveryKafkaTopic = {}));

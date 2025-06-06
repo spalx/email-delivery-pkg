@@ -1,3 +1,3 @@
-export declare enum EmailKafkaTopic {
+export declare enum EmailDeliveryKafkaTopic {
     SendEmail = "emaildelivery.sendEmail"
 }
