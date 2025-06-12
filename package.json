@@ -12,9 +12,7 @@
   },
   "dependencies": {
     "app-life-cycle-pkg": "git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.0",
-    "kafka-pkg": "git+git@github.com:spalx/kafka-pkg.git#1.0.0",
-    "uuid": "^11.0.5",
-    "zod": "^3.25.49"
+    "kafka-pkg": "git+git@github.com:spalx/kafka-pkg.git#1.0.0"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

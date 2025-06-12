@@ -4,16 +4,26 @@ Package which enables to connect to the email-delivery service easily, releasing
 
 ## Dependencies
 
-This service depends on kafka-pkg repository.
+This package depends on the following packages:
 
----
+[app-life-cycle-pkg](https://github.com/spalx/app-life-cycle-pkg)<br>
+[kafka-pkg](https://github.com/spalx/kafka-pkg)
 
-## Functions
+## emailDeliveryService
+
+Instance of `EmailDeliveryService` used for sending emails.<br>
+Since this service implements the IAppPkg interface, the recommended way of using it is by registering it in your app initialization script like this:
+
+```ts
+// appService is an instance of AppService (app-life-cycle-pkg)
+appService.use(emailDeliveryService);
+```
+
+### emailDeliveryService methods
 
 | Function | Argument Types | Returns | Description |
 | - | - | - | - |
-| `sendEmail(dto, callback?)` | `dto: CorrelatedRequestDTO<SendEmailDTO>`,<br>`callback?: (response: CorrelatedResponseDTO<DidSendEmailDTO>) => void` | `void`  | Sends an email via Kafka and optionally registers a callback for response |
-| `validateSendEmailDTO(data)` | `data: SendEmailDTO` | `void` | Validates the data and throws an error when validation fails |
+| `sendEmail(data)` | `data: CorrelatedRequestDTO<SendEmailDTO>` | `Promise<CorrelatedResponseDTO<DidSendEmailDTO>>`  | Sends an email via kafka and returns the response |
 
 ---
 
@@ -41,12 +51,11 @@ This service depends on kafka-pkg repository.
 | to | string[] | |
 | subject | string | |
 
-### CorrelatedResponseDTO\<T\> interface
+### CorrelatedRequestDTO\<T\> interface
 
 Check kafka-pkg repository for details.
 
-
-### CorrelatedRequestDTO\<T\> interface
+### CorrelatedResponseDTO\<T\> interface
 
 Check kafka-pkg repository for details.
 
@@ -56,10 +65,9 @@ Check kafka-pkg repository for details.
 
 ```ts
 import {
-  sendEmail,
+  emailDeliveryService,
   SendEmailDTO,
   DidSendEmailDTO,
-  EmailKafkaTopic,
-  validateSendEmailDTO
+  EmailKafkaTopic
 } from 'email-delivery-pkg';
 ```
