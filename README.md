@@ -1,6 +1,6 @@
 # email-delivery-pkg
 
-Package which enables to connect to the email-delivery service easily, releasing the need of connecting to the respective Kafka topics.
+Package which enables to connect to the email-delivery service easily, releasing the need of connecting to the respective kafka topics.
 
 ## Dependencies
 
