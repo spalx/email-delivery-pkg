@@ -1,6 +1,6 @@
 {
   "name": "email-delivery-pkg",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -11,8 +11,8 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "app-life-cycle-pkg": "git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.1",
-    "kafka-pkg": "git+git@github.com:spalx/kafka-pkg.git#1.0.1"
+    "app-life-cycle-pkg": "git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.2",
+    "kafka-pkg": "git+git@github.com:spalx/kafka-pkg.git#1.0.2"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
