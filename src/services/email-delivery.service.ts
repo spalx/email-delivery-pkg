@@ -5,8 +5,8 @@ import {
 } from 'kafka-pkg';
 import { IAppPkg } from 'app-life-cycle-pkg';
 
-import { SendEmailDTO, DidSendEmailDTO } from '../types/email-delivery.dto';
-import { EmailDeliveryKafkaTopic } from '../common/constants';
+import { SendEmailDTO, DidSendEmailDTO } from '@/types/email-delivery.dto';
+import { EmailDeliveryKafkaTopic } from '@/common/constants';
 
 class EmailDeliveryService implements IAppPkg {
   private correlatedKafkaRequest: CorrelatedKafkaRequest | null = null;
