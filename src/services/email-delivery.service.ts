@@ -1,28 +1,36 @@
-import {
-  CorrelatedRequestDTO,
-  CorrelatedResponseDTO,
-  CorrelatedKafkaRequest
-} from 'kafka-pkg';
-import { IAppPkg } from 'app-life-cycle-pkg';
+import { v4 as uuidv4 } from 'uuid';
+import { CorrelatedResponseDTO, TransportAwareService, transportService } from 'transport-pkg';
+import { throwErrorForStatus } from 'rest-pkg';
+import { IAppPkg, AppRunPriority } from 'app-life-cycle-pkg';
 
 import { SendEmailDTO, DidSendEmailDTO } from '../types/email-delivery.dto';
-import { EmailDeliveryKafkaTopic } from '../common/constants';
+import { EmailDeliveryAction } from '../common/constants';
 
-class EmailDeliveryService implements IAppPkg {
-  private correlatedKafkaRequest: CorrelatedKafkaRequest | null = null;
 
+class EmailDeliveryService extends TransportAwareService implements IAppPkg {
   async init(): Promise<void> {
-    if (!this.correlatedKafkaRequest) {
-      this.correlatedKafkaRequest = new CorrelatedKafkaRequest(EmailDeliveryKafkaTopic.SendEmail);
-    }
+    transportService.transportsSend([EmailDeliveryAction.SendEmail]);
   }
 
-  async sendEmail(data: CorrelatedRequestDTO<SendEmailDTO>): Promise<CorrelatedResponseDTO<DidSendEmailDTO>> {
-    if (!this.correlatedKafkaRequest) {
-      throw new Error('Email delivery service not initialized');
+  getPriority(): number {
+    return AppRunPriority.Highest;
+  }
+
+  async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<DidSendEmailDTO> {
+    const response: CorrelatedResponseDTO<DidSendEmailDTO> = await transportService.send(
+      {
+        action: EmailDeliveryAction.SendEmail,
+        data,
+        correlation_id: correlationId || uuidv4(),
+        transport_name: this.getActiveTransport()
+      }
+    );
+
+    if (response.status !== 0) {
+      throwErrorForStatus(response.status, response.error || '');
     }
 
-    return await this.correlatedKafkaRequest.send(data) as CorrelatedResponseDTO<DidSendEmailDTO>;
+    return response.data as DidSendEmailDTO;
   }
 }
 

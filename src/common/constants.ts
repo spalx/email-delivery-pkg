@@ -1,3 +1,3 @@
-export enum EmailDeliveryKafkaTopic {
+export enum EmailDeliveryAction {
   SendEmail = 'emaildelivery.sendEmail'
 }
