@@ -1,14 +1,5 @@
 # email-delivery-pkg
 
-Package which enables to connect to the email-delivery service easily, releasing the need of connecting to the respective kafka topics.
-
-## Dependencies
-
-This package depends on the following packages:
-
-[app-life-cycle-pkg](https://github.com/spalx/app-life-cycle-pkg)<br>
-[kafka-pkg](https://github.com/spalx/kafka-pkg)
-
 ## emailDeliveryService
 
 Instance of `EmailDeliveryService` used for sending emails.<br>
@@ -23,7 +14,7 @@ appService.use(emailDeliveryService);
 
 | Function | Argument Types | Returns | Description |
 | - | - | - | - |
-| `sendEmail(data)` | `data: CorrelatedRequestDTO<SendEmailDTO>` | `Promise<CorrelatedResponseDTO<DidSendEmailDTO>>`  | Sends an email via kafka and returns the response |
+| `sendEmail(data)` | `data: CorrelatedRequestDTO<SendEmailDTO>` | `Promise<DidSendEmailDTO>`  | Sends an email and returns the response |
 
 ---
 
@@ -51,14 +42,6 @@ appService.use(emailDeliveryService);
 | to | string[] | |
 | subject | string | |
 
-### CorrelatedRequestDTO\<T\> interface
-
-Check kafka-pkg repository for details.
-
-### CorrelatedResponseDTO\<T\> interface
-
-Check kafka-pkg repository for details.
-
 ---
 
 ## Imports
@@ -67,7 +50,6 @@ Check kafka-pkg repository for details.
 import {
   emailDeliveryService,
   SendEmailDTO,
-  DidSendEmailDTO,
-  EmailKafkaTopic
+  DidSendEmailDTO
 } from 'email-delivery-pkg';
 ```

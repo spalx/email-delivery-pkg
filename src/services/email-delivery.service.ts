@@ -6,7 +6,6 @@ import { IAppPkg, AppRunPriority } from 'app-life-cycle-pkg';
 import { SendEmailDTO, DidSendEmailDTO } from '../types/email-delivery.dto';
 import { EmailDeliveryAction } from '../common/constants';
 
-
 class EmailDeliveryService extends TransportAwareService implements IAppPkg {
   async init(): Promise<void> {
     transportService.transportsSend([EmailDeliveryAction.SendEmail]);
