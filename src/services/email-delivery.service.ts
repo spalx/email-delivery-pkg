@@ -22,7 +22,8 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
         data,
         correlation_id: correlationId || uuidv4(),
         transport_name: this.getActiveTransport()
-      }
+      },
+      this.getActiveTransportOptions()
     );
 
     if (response.status !== 0) {
