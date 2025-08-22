@@ -14,7 +14,7 @@ appService.use(emailDeliveryService);
 
 | Function | Argument Types | Returns | Description |
 | - | - | - | - |
-| `sendEmail(data)` | `data: CorrelatedRequestDTO<SendEmailDTO>` | `Promise<DidSendEmailDTO>`  | Sends an email and returns the response |
+| `sendEmail(data)` | `data: SendEmailDTO` | `Promise<DidSendEmailDTO>`  | Sends an email and returns the response |
 
 ---
 
