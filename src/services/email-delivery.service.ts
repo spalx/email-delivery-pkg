@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
-import { CorrelatedResponseDTO, TransportAwareService, transportService } from 'transport-pkg';
-import { throwErrorForStatus } from 'rest-pkg';
+import { CorrelatedMessage, TransportAwareService, transportService } from 'transport-pkg';
 import { IAppPkg, AppRunPriority } from 'app-life-cycle-pkg';
 
-import { SendEmailDTO, DidSendEmailDTO } from '../types/email-delivery.dto';
+import { SendEmailDTO } from '../types/email-delivery.dto';
 import { EmailDeliveryAction } from '../common/constants';
 
 class EmailDeliveryService extends TransportAwareService implements IAppPkg {
@@ -11,22 +10,15 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
     return AppRunPriority.Highest;
   }
 
-  async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<DidSendEmailDTO> {
-    const response: CorrelatedResponseDTO<DidSendEmailDTO> = await transportService.send(
-      {
-        action: EmailDeliveryAction.SendEmail,
-        data,
-        correlation_id: correlationId || uuidv4(),
-        transport_name: this.getActiveTransport()
-      },
-      this.getActiveTransportOptions()
+  async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<void> {
+    const message: CorrelatedMessage = CorrelatedMessage.create(
+      correlationId || uuidv4(),
+      EmailDeliveryAction.SendEmail,
+      this.getActiveTransport(),
+      data
     );
 
-    if (response.status !== 0) {
-      throwErrorForStatus(response.status, response.error || '');
-    }
-
-    return response.data as DidSendEmailDTO;
+    await transportService.send(message, this.getActiveTransportOptions());
   }
 }
 

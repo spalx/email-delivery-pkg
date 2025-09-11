@@ -1,3 +1,4 @@
 export enum EmailDeliveryAction {
-  SendEmail = 'emaildelivery.sendEmail'
+  SendEmail = 'emaildelivery.sendEmail',
+  DidSendEmail = 'emaildelivery.didSendEmail'
 }

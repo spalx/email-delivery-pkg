@@ -13,6 +13,7 @@ export interface SendEmailDTO {
 }
 
 export interface DidSendEmailDTO {
+  from: string;
   to: string[];
   subject: string;
 }

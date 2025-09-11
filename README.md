@@ -14,7 +14,7 @@ appService.use(emailDeliveryService);
 
 | Function | Argument Types | Returns | Description |
 | - | - | - | - |
-| `sendEmail(data)` | `data: SendEmailDTO` | `Promise<DidSendEmailDTO>`  | Sends an email and returns the response |
+| `sendEmail(data)` | `data: SendEmailDTO` | `Promise<void>`  | Sends an email |
 
 ---
 
@@ -34,14 +34,6 @@ appService.use(emailDeliveryService);
 | bcc | string[], optional | BCC email addresses |
 | replyTo | string, optional | Reply-To header address |
 
-
-### DidSendEmailDTO interface
-
-| Key | Type | Possible values |
-| - | - | - |
-| to | string[] | |
-| subject | string | |
-
 ---
 
 ## Imports
@@ -49,7 +41,6 @@ appService.use(emailDeliveryService);
 ```ts
 import {
   emailDeliveryService,
-  SendEmailDTO,
-  DidSendEmailDTO
+  SendEmailDTO
 } from 'email-delivery-pkg';
 ```
