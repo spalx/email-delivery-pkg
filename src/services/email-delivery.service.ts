@@ -1,14 +1,16 @@
 import { v4 as uuidv4 } from 'uuid';
 import { CorrelatedMessage, TransportAwareService, TransportAdapterName, transportService } from 'transport-pkg';
 import { IAppPkg, AppRunPriority } from 'app-life-cycle-pkg';
+import { serviceDiscoveryService, ServiceDTO } from 'service-discovery-pkg';
 
 import { SendEmailDTO } from '../types/email-delivery.dto';
-import { EmailDeliveryAction } from '../common/constants';
+import { EmailDeliveryAction, SERVICE_NAME } from '../common/constants';
 
 class EmailDeliveryService extends TransportAwareService implements IAppPkg {
   async init(): Promise<void> {
-    //TODO: use service-discovery here
-    this.useTransport(TransportAdapterName.HTTP, { host: 'email-delivery', port: 3040 });
+    const service: ServiceDTO = await serviceDiscoveryService.getService(SERVICE_NAME);
+
+    this.useTransport(TransportAdapterName.HTTP, { host: service.host, port: service.port });
   }
 
   getPriority(): number {
