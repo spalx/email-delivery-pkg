@@ -17,6 +17,17 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
     return AppRunPriority.Medium;
   }
 
+  getName(): string {
+    return 'email-delivery';
+  }
+
+  getDependencies(): IAppPkg[] {
+    return [
+      transportService,
+      serviceDiscoveryService
+    ];
+  }
+
   async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<void> {
     const message: CorrelatedMessage = CorrelatedMessage.create(
       correlationId || uuidv4(),
