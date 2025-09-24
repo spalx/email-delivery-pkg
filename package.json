@@ -10,7 +10,7 @@
     "app-life-cycle-pkg": "git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.5",
     "service-discovery-pkg": "git+git@github.com:spalx/service-discovery-pkg.git#1.0.1",
     "transport-pkg": "git+git@github.com:spalx/transport-pkg.git#1.1.5",
-    "uuid": "^11.0.5",
+    "uuid": "^13.0.0",
     "zod": "^3.25.49"
   },
   "devDependencies": {
