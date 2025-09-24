@@ -14,7 +14,7 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
   }
 
   getPriority(): number {
-    return AppRunPriority.Highest;
+    return AppRunPriority.Medium;
   }
 
   async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<void> {
