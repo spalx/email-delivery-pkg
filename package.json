@@ -1,6 +1,6 @@
 {
   "name": "email-delivery-pkg",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -9,7 +9,7 @@
   "dependencies": {
     "app-life-cycle-pkg": "git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.6",
     "service-discovery-pkg": "git+git@github.com:spalx/service-discovery-pkg.git#1.0.2",
-    "transport-pkg": "git+git@github.com:spalx/transport-pkg.git#1.1.6",
+    "transport-pkg": "git+git@github.com:spalx/transport-pkg.git#1.1.7",
     "uuid": "^13.0.0",
     "zod": "^3.25.49"
   },
