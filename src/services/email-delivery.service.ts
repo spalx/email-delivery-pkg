@@ -33,7 +33,7 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
   }
 
   getName(): string {
-    return 'email-delivery';
+    return SERVICE_NAME;
   }
 
   getDependencies(): IAppPkg[] {
