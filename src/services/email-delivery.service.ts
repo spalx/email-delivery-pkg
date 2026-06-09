@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
-import { CorrelatedMessage, TransportAwareService, TransportAdapterName, transportService, CircuitBreaker } from 'transport-pkg';
-import { IAppPkg, AppRunPriority } from 'app-life-cycle-pkg';
-import { serviceDiscoveryService, ServiceDTO } from 'service-discovery-pkg';
+import { CorrelatedMessage, TransportAwareService, TransportAdapterName, transportService, CircuitBreaker } from '@spalx/transport-pkg';
+import { IAppPkg, AppRunPriority } from '@spalx/app-life-cycle-pkg';
+import { serviceDiscoveryService, ServiceDTO } from '@spalx/service-discovery-pkg';
 
 import { SendEmailDTO } from '../types/email-delivery.dto';
 import { EmailDeliveryAction, SERVICE_NAME } from '../common/constants';

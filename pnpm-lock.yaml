@@ -8,28 +8,28 @@ importers:
 
   .:
     dependencies:
-      app-life-cycle-pkg:
-        specifier: git+git@github.com:spalx/app-life-cycle-pkg.git#1.0.7
-        version: https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7
-      service-discovery-pkg:
-        specifier: git+git@github.com:spalx/service-discovery-pkg.git#1.0.3
-        version: https://codeload.github.com/spalx/service-discovery-pkg/tar.gz/5756f7b10162bda3bc2270836c97133319cf2bda
-      transport-pkg:
-        specifier: git+git@github.com:spalx/transport-pkg.git#1.1.8
-        version: https://codeload.github.com/spalx/transport-pkg/tar.gz/e56ae250d5a815c0d56a5c5c3c6dd6993b873332
+      '@spalx/app-life-cycle-pkg':
+        specifier: ^1.0.8
+        version: 1.0.8
+      '@spalx/service-discovery-pkg':
+        specifier: ^1.0.5
+        version: 1.0.5
+      '@spalx/transport-pkg':
+        specifier: ^1.2.2
+        version: 1.2.2
       uuid:
-        specifier: ^13.0.0
-        version: 13.0.0
+        specifier: ^14.0.0
+        version: 14.0.0
       zod:
         specifier: ^4.1.12
-        version: 4.1.12
+        version: 4.4.3
     devDependencies:
       '@types/node':
-        specifier: ^24.7.0
-        version: 24.7.0
+        specifier: ^25.9.2
+        version: 25.9.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -43,15 +43,26 @@ packages:
   '@so-ric/colorspace@1.1.6':
     resolution: {integrity: sha512-/KiKkpHNOBgkFJwu9sh48LkHSMYGyuTcSFK/qMBdnOAlrRJzRSXAOFB5qwzaVQuDl8wAvHVMkaASQDReTahxuw==}
 
-  '@types/node@24.7.0':
-    resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
+  '@spalx/app-life-cycle-pkg@1.0.8':
+    resolution: {integrity: sha512-oSEjrTZ6b4zOFOr1oGh2pfse1mnV0QeT95zcjGa33ZJnsb9ZxtsYFRT8KbwdVwrCFXGczsQCTKmG6/W6bkO1Dg==}
+
+  '@spalx/common-loggers-pkg@1.0.5':
+    resolution: {integrity: sha512-FEHMa5acebl20gH+76YgBPdBT49ZuyKHecjQONYkiHWdsXxFaQCmSJTVNKSLZWD+ZOkSAz9AWizvfO1etdWaQQ==}
+
+  '@spalx/rest-pkg@1.0.7':
+    resolution: {integrity: sha512-4o9IGF80bhGECnIUc3VbATL55gktezSHLbZKmofn2X1UPvIlQQw+bs0/aw3f1+lz0Z9gnL1y6PPpluDN4HZZIg==}
+
+  '@spalx/service-discovery-pkg@1.0.5':
+    resolution: {integrity: sha512-5QczFE+tt9IIcB3ENjCfPzuVhfgK0kurKiVl4BtusZgBgXknp6enXxmN6JJ42snh/lq+uCxiKTce8/ahSo+gUg==}
+
+  '@spalx/transport-pkg@1.2.2':
+    resolution: {integrity: sha512-5n8FkhWCl4wMK2gCLmOZBSw5hipykV4TjVcOAcPA1LOTAderTwyT0uKdtkcp/4JAxhW24CzEjotAB8/KOJ47Mg==}
+
+  '@types/node@25.9.2':
+    resolution: {integrity: sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==}
 
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
-
-  app-life-cycle-pkg@https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7:
-    resolution: {tarball: https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7}
-    version: 1.0.7
 
   async@3.2.6:
     resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
@@ -64,25 +75,21 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
-  color-convert@3.1.2:
-    resolution: {integrity: sha512-UNqkvCDXstVck3kdowtOTWROIJQwafjOfXSmddoDrXo4cewMKmusCeF22Q24zvjR8nwWib/3S/dfyzPItPEiJg==}
+  color-convert@3.1.3:
+    resolution: {integrity: sha512-fasDH2ont2GqF5HpyO4w0+BcewlhHEZOFn9c1ckZdHpJ56Qb7MHhH/IcJZbBGgvdtwdwNbLvxiBEdg336iA9Sg==}
     engines: {node: '>=14.6'}
 
-  color-name@2.0.2:
-    resolution: {integrity: sha512-9vEt7gE16EW7Eu7pvZnR0abW9z6ufzhXxGXZEVU9IqPdlsUiMwJeJfRtq0zePUmnbHGT9zajca7mX8zgoayo4A==}
+  color-name@2.1.0:
+    resolution: {integrity: sha512-1bPaDNFm0axzE4MEAzKPuqKWeRaT43U/hyxKPBdqTfmPF+d6n7FSoTFxLVULUJOmiLp01KjhIPPH+HrXZJN4Rg==}
     engines: {node: '>=12.20'}
 
-  color-string@2.1.2:
-    resolution: {integrity: sha512-RxmjYxbWemV9gKu4zPgiZagUxbH3RQpEIO77XoSSX0ivgABDZ+h8Zuash/EMFLTI4N9QgFPOJ6JQpPZKFxa+dA==}
+  color-string@2.1.4:
+    resolution: {integrity: sha512-Bb6Cq8oq0IjDOe8wJmi4JeNn763Xs9cfrBcaylK1tPypWzyoy2G3l90v9k64kjphl/ZJjPIShFztenRomi8WTg==}
     engines: {node: '>=18'}
 
-  color@5.0.2:
-    resolution: {integrity: sha512-e2hz5BzbUPcYlIRHo8ieAhYgoajrJr+hWoceg6E345TPsATMUKqDgzt8fSXZJJbxfpiPzkWyphz8yn8At7q3fA==}
+  color@5.0.3:
+    resolution: {integrity: sha512-ezmVcLR3xAVp8kYOm4GS45ZLLgIE6SPAFoduLr6hTDajwb3KZ2F46gulK3XpcwRFb5KKGCSezCBAY4Dw4HsyXA==}
     engines: {node: '>=18'}
-
-  common-loggers-pkg@https://codeload.github.com/spalx/common-loggers-pkg/tar.gz/40aeabd5da64969a085fd4a816c7ee0a03ebd8e0:
-    resolution: {tarball: https://codeload.github.com/spalx/common-loggers-pkg/tar.gz/40aeabd5da64969a085fd4a816c7ee0a03ebd8e0}
-    version: 1.0.4
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -99,8 +106,8 @@ packages:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
 
-  es-object-atoms@1.1.1:
-    resolution: {integrity: sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==}
+  es-object-atoms@1.1.2:
+    resolution: {integrity: sha512-HWcBoN6NileqtSydK2FqHbS/LoDd2pqrnQHLyJzBj4kOp/ky2MWMN694xOfkK8/SnUsW2DH7EfyVlydKCsm1Zw==}
     engines: {node: '>= 0.4'}
 
   fecha@4.2.3:
@@ -131,8 +138,8 @@ packages:
     resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
     engines: {node: '>= 0.4'}
 
-  hasown@2.0.2:
-    resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
+  hasown@2.0.4:
+    resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
     engines: {node: '>= 0.4'}
 
   inherits@2.0.4:
@@ -170,17 +177,13 @@ packages:
   one-time@1.0.0:
     resolution: {integrity: sha512-5DXOiRKwuSEcQ/l0kGCF6Q3jcADFv5tSmRaJck/OqkVFcOzutB134KRSfF0xDrL39MNnqxbHBbUUcjZIhTgb2g==}
 
-  qs@6.14.0:
-    resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
+  qs@6.15.2:
+    resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==}
     engines: {node: '>=0.6'}
 
   readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
-
-  rest-pkg@https://codeload.github.com/spalx/rest-pkg/tar.gz/2d1b553434679603fe387d091484c1fd101e61be:
-    resolution: {tarball: https://codeload.github.com/spalx/rest-pkg/tar.gz/2d1b553434679603fe387d091484c1fd101e61be}
-    version: 1.0.4
 
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
@@ -189,12 +192,8 @@ packages:
     resolution: {integrity: sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA==}
     engines: {node: '>=10'}
 
-  service-discovery-pkg@https://codeload.github.com/spalx/service-discovery-pkg/tar.gz/5756f7b10162bda3bc2270836c97133319cf2bda:
-    resolution: {tarball: https://codeload.github.com/spalx/service-discovery-pkg/tar.gz/5756f7b10162bda3bc2270836c97133319cf2bda}
-    version: 1.0.3
-
-  side-channel-list@1.0.0:
-    resolution: {integrity: sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==}
+  side-channel-list@1.0.1:
+    resolution: {integrity: sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==}
     engines: {node: '>= 0.4'}
 
   side-channel-map@1.0.1:
@@ -218,27 +217,23 @@ packages:
   text-hex@1.0.0:
     resolution: {integrity: sha512-uuVGNWzgJ4yhRaNSiubPY7OjISw4sw4E5Uv0wbjp+OzcbmVU/rsT8ujgcXJhn9ypzsgr5vlzpPqP+MBBKcGvbg==}
 
-  transport-pkg@https://codeload.github.com/spalx/transport-pkg/tar.gz/e56ae250d5a815c0d56a5c5c3c6dd6993b873332:
-    resolution: {tarball: https://codeload.github.com/spalx/transport-pkg/tar.gz/e56ae250d5a815c0d56a5c5c3c6dd6993b873332}
-    version: 1.1.8
-
   triple-beam@1.4.1:
     resolution: {integrity: sha512-aZbgViZrg1QNcG+LULa7nhZpJTZSLm/mXnHXnbAbjmN5aSa0y7V+wvv6+4WaBtpISJzThKy+PIPxc1Nq1EJ9mg==}
     engines: {node: '>= 14.0.0'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.14.0:
-    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
+  undici-types@7.24.6:
+    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@13.0.0:
-    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
+  uuid@14.0.0:
+    resolution: {integrity: sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==}
     hasBin: true
 
   winston-daily-rotate-file@5.0.0:
@@ -251,12 +246,12 @@ packages:
     resolution: {integrity: sha512-8drMJ4rkgaPo1Me4zD/3WLfI/zPdA9o2IipKODunnGDcuqbHwjsbB79ylv04LCGGzU0xQ6vTznOMpQGaLhhm6A==}
     engines: {node: '>= 12.0.0'}
 
-  winston@3.18.3:
-    resolution: {integrity: sha512-NoBZauFNNWENgsnC9YpgyYwOVrl2m58PpQ8lNHjV3kosGs7KJ7Npk9pCUE+WJlawVSe8mykWDKWFSVfs3QO9ww==}
+  winston@3.19.0:
+    resolution: {integrity: sha512-LZNJgPzfKR+/J3cHkxcpHKpKKvGfDZVPS4hfJCc4cCG0CgYzvlD6yE/S3CIL/Yt91ak327YCpiF/0MyeZHEHKA==}
     engines: {node: '>= 12.0.0'}
 
-  zod@4.1.12:
-    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
 snapshots:
 
@@ -270,18 +265,43 @@ snapshots:
 
   '@so-ric/colorspace@1.1.6':
     dependencies:
-      color: 5.0.2
+      color: 5.0.3
       text-hex: 1.0.0
 
-  '@types/node@24.7.0':
+  '@spalx/app-life-cycle-pkg@1.0.8':
     dependencies:
-      undici-types: 7.14.0
+      '@spalx/common-loggers-pkg': 1.0.5
+
+  '@spalx/common-loggers-pkg@1.0.5':
+    dependencies:
+      winston: 3.19.0
+      winston-daily-rotate-file: 5.0.0(winston@3.19.0)
+
+  '@spalx/rest-pkg@1.0.7':
+    dependencies:
+      qs: 6.15.2
+      zod: 4.4.3
+
+  '@spalx/service-discovery-pkg@1.0.5':
+    dependencies:
+      '@spalx/app-life-cycle-pkg': 1.0.8
+      '@spalx/common-loggers-pkg': 1.0.5
+      '@spalx/transport-pkg': 1.2.2
+      uuid: 14.0.0
+      zod: 4.4.3
+
+  '@spalx/transport-pkg@1.2.2':
+    dependencies:
+      '@spalx/app-life-cycle-pkg': 1.0.8
+      '@spalx/rest-pkg': 1.0.7
+      uuid: 14.0.0
+      zod: 4.4.3
+
+  '@types/node@25.9.2':
+    dependencies:
+      undici-types: 7.24.6
 
   '@types/triple-beam@1.3.5': {}
-
-  app-life-cycle-pkg@https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7:
-    dependencies:
-      common-loggers-pkg: https://codeload.github.com/spalx/common-loggers-pkg/tar.gz/40aeabd5da64969a085fd4a816c7ee0a03ebd8e0
 
   async@3.2.6: {}
 
@@ -295,25 +315,20 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
-  color-convert@3.1.2:
+  color-convert@3.1.3:
     dependencies:
-      color-name: 2.0.2
+      color-name: 2.1.0
 
-  color-name@2.0.2: {}
+  color-name@2.1.0: {}
 
-  color-string@2.1.2:
+  color-string@2.1.4:
     dependencies:
-      color-name: 2.0.2
+      color-name: 2.1.0
 
-  color@5.0.2:
+  color@5.0.3:
     dependencies:
-      color-convert: 3.1.2
-      color-string: 2.1.2
-
-  common-loggers-pkg@https://codeload.github.com/spalx/common-loggers-pkg/tar.gz/40aeabd5da64969a085fd4a816c7ee0a03ebd8e0:
-    dependencies:
-      winston: 3.18.3
-      winston-daily-rotate-file: 5.0.0(winston@3.18.3)
+      color-convert: 3.1.3
+      color-string: 2.1.4
 
   dunder-proto@1.0.1:
     dependencies:
@@ -327,7 +342,7 @@ snapshots:
 
   es-errors@1.3.0: {}
 
-  es-object-atoms@1.1.1:
+  es-object-atoms@1.1.2:
     dependencies:
       es-errors: 1.3.0
 
@@ -346,24 +361,24 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       es-define-property: 1.0.1
       es-errors: 1.3.0
-      es-object-atoms: 1.1.1
+      es-object-atoms: 1.1.2
       function-bind: 1.1.2
       get-proto: 1.0.1
       gopd: 1.2.0
       has-symbols: 1.1.0
-      hasown: 2.0.2
+      hasown: 2.0.4
       math-intrinsics: 1.1.0
 
   get-proto@1.0.1:
     dependencies:
       dunder-proto: 1.0.1
-      es-object-atoms: 1.1.1
+      es-object-atoms: 1.1.2
 
   gopd@1.2.0: {}
 
   has-symbols@1.1.0: {}
 
-  hasown@2.0.2:
+  hasown@2.0.4:
     dependencies:
       function-bind: 1.1.2
 
@@ -396,7 +411,7 @@ snapshots:
     dependencies:
       fn.name: 1.1.0
 
-  qs@6.14.0:
+  qs@6.15.2:
     dependencies:
       side-channel: 1.1.0
 
@@ -406,25 +421,11 @@ snapshots:
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
 
-  rest-pkg@https://codeload.github.com/spalx/rest-pkg/tar.gz/2d1b553434679603fe387d091484c1fd101e61be:
-    dependencies:
-      qs: 6.14.0
-      zod: 4.1.12
-
   safe-buffer@5.2.1: {}
 
   safe-stable-stringify@2.5.0: {}
 
-  service-discovery-pkg@https://codeload.github.com/spalx/service-discovery-pkg/tar.gz/5756f7b10162bda3bc2270836c97133319cf2bda:
-    dependencies:
-      app-life-cycle-pkg: https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7
-      common-loggers-pkg: https://codeload.github.com/spalx/common-loggers-pkg/tar.gz/40aeabd5da64969a085fd4a816c7ee0a03ebd8e0
-      rest-pkg: https://codeload.github.com/spalx/rest-pkg/tar.gz/2d1b553434679603fe387d091484c1fd101e61be
-      transport-pkg: https://codeload.github.com/spalx/transport-pkg/tar.gz/e56ae250d5a815c0d56a5c5c3c6dd6993b873332
-      uuid: 13.0.0
-      zod: 4.1.12
-
-  side-channel-list@1.0.0:
+  side-channel-list@1.0.1:
     dependencies:
       es-errors: 1.3.0
       object-inspect: 1.13.4
@@ -448,7 +449,7 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
       object-inspect: 1.13.4
-      side-channel-list: 1.0.0
+      side-channel-list: 1.0.1
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
@@ -460,29 +461,22 @@ snapshots:
 
   text-hex@1.0.0: {}
 
-  transport-pkg@https://codeload.github.com/spalx/transport-pkg/tar.gz/e56ae250d5a815c0d56a5c5c3c6dd6993b873332:
-    dependencies:
-      app-life-cycle-pkg: https://codeload.github.com/spalx/app-life-cycle-pkg/tar.gz/8a53153cee6177a9f4ac581a932e780bee2ddbf7
-      rest-pkg: https://codeload.github.com/spalx/rest-pkg/tar.gz/2d1b553434679603fe387d091484c1fd101e61be
-      uuid: 13.0.0
-      zod: 4.1.12
-
   triple-beam@1.4.1: {}
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
-  undici-types@7.14.0: {}
+  undici-types@7.24.6: {}
 
   util-deprecate@1.0.2: {}
 
-  uuid@13.0.0: {}
+  uuid@14.0.0: {}
 
-  winston-daily-rotate-file@5.0.0(winston@3.18.3):
+  winston-daily-rotate-file@5.0.0(winston@3.19.0):
     dependencies:
       file-stream-rotator: 0.6.1
       object-hash: 3.0.0
       triple-beam: 1.4.1
-      winston: 3.18.3
+      winston: 3.19.0
       winston-transport: 4.9.0
 
   winston-transport@4.9.0:
@@ -491,7 +485,7 @@ snapshots:
       readable-stream: 3.6.2
       triple-beam: 1.4.1
 
-  winston@3.18.3:
+  winston@3.19.0:
     dependencies:
       '@colors/colors': 1.6.0
       '@dabh/diagnostics': 2.0.8
@@ -505,4 +499,4 @@ snapshots:
       triple-beam: 1.4.1
       winston-transport: 4.9.0
 
-  zod@4.1.12: {}
+  zod@4.4.3: {}
