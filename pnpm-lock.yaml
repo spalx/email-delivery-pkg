@@ -12,11 +12,11 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8
       '@spalx/service-discovery-pkg':
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.6
+        version: 1.0.6
       '@spalx/transport-pkg':
-        specifier: ^1.2.2
-        version: 1.2.2
+        specifier: ^1.2.3
+        version: 1.2.3
       uuid:
         specifier: ^14.0.0
         version: 14.0.0
@@ -49,14 +49,14 @@ packages:
   '@spalx/common-loggers-pkg@1.0.5':
     resolution: {integrity: sha512-FEHMa5acebl20gH+76YgBPdBT49ZuyKHecjQONYkiHWdsXxFaQCmSJTVNKSLZWD+ZOkSAz9AWizvfO1etdWaQQ==}
 
-  '@spalx/rest-pkg@1.0.7':
-    resolution: {integrity: sha512-4o9IGF80bhGECnIUc3VbATL55gktezSHLbZKmofn2X1UPvIlQQw+bs0/aw3f1+lz0Z9gnL1y6PPpluDN4HZZIg==}
+  '@spalx/rest-pkg@1.0.8':
+    resolution: {integrity: sha512-Y14dMhhiXBTpWz7T/3EJDn1de9Rm0QpxWml9tdPhGV3RSakNS5ICr1fxq0Na+q8SpHOBpYYWN1h0Osod4L+dnQ==}
 
-  '@spalx/service-discovery-pkg@1.0.5':
-    resolution: {integrity: sha512-5QczFE+tt9IIcB3ENjCfPzuVhfgK0kurKiVl4BtusZgBgXknp6enXxmN6JJ42snh/lq+uCxiKTce8/ahSo+gUg==}
+  '@spalx/service-discovery-pkg@1.0.6':
+    resolution: {integrity: sha512-X4RjucrFlxOfBbPA8ogJc3GCwwvwlcI/ID4Bpvjy7eR66qJRck+GPAaxe0frgCMt0oHQMRINQyUoG6Bj0PRd2Q==}
 
-  '@spalx/transport-pkg@1.2.2':
-    resolution: {integrity: sha512-5n8FkhWCl4wMK2gCLmOZBSw5hipykV4TjVcOAcPA1LOTAderTwyT0uKdtkcp/4JAxhW24CzEjotAB8/KOJ47Mg==}
+  '@spalx/transport-pkg@1.2.3':
+    resolution: {integrity: sha512-LGMkPzu3KtLATLU/ezsCi0kAuma9N3WIVMMQ/IYrAGmYsvZ1VktY6oVLaU6xmWZbNlio0wsn5jZFNz3bWvr2ZQ==}
 
   '@types/node@25.9.2':
     resolution: {integrity: sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==}
@@ -277,23 +277,23 @@ snapshots:
       winston: 3.19.0
       winston-daily-rotate-file: 5.0.0(winston@3.19.0)
 
-  '@spalx/rest-pkg@1.0.7':
+  '@spalx/rest-pkg@1.0.8':
     dependencies:
       qs: 6.15.2
       zod: 4.4.3
 
-  '@spalx/service-discovery-pkg@1.0.5':
+  '@spalx/service-discovery-pkg@1.0.6':
     dependencies:
       '@spalx/app-life-cycle-pkg': 1.0.8
       '@spalx/common-loggers-pkg': 1.0.5
-      '@spalx/transport-pkg': 1.2.2
+      '@spalx/transport-pkg': 1.2.3
       uuid: 14.0.0
       zod: 4.4.3
 
-  '@spalx/transport-pkg@1.2.2':
+  '@spalx/transport-pkg@1.2.3':
     dependencies:
       '@spalx/app-life-cycle-pkg': 1.0.8
-      '@spalx/rest-pkg': 1.0.7
+      '@spalx/rest-pkg': 1.0.8
       uuid: 14.0.0
       zod: 4.4.3
 
