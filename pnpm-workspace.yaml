@@ -1,0 +1,3 @@
+minimumReleaseAgeExclude:
+  - '@spalx/service-discovery-pkg'
+  - '@spalx/transport-pkg'

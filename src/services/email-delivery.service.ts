@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 import { CorrelatedMessage, TransportAwareService, TransportAdapterName, transportService, CircuitBreaker } from '@spalx/transport-pkg';
 import { IAppPkg, AppRunPriority } from '@spalx/app-life-cycle-pkg';
 import { serviceDiscoveryService, ServiceDTO } from '@spalx/service-discovery-pkg';
@@ -45,7 +45,7 @@ class EmailDeliveryService extends TransportAwareService implements IAppPkg {
 
   async sendEmail(data: SendEmailDTO, correlationId?: string): Promise<void> {
     const message: CorrelatedMessage = CorrelatedMessage.create(
-      correlationId || uuidv4(),
+      correlationId || randomUUID(),
       EmailDeliveryAction.SendEmail,
       this.getActiveTransport(),
       data
