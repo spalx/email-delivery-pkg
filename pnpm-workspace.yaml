@@ -1,3 +1,4 @@
 minimumReleaseAgeExclude:
   - '@spalx/service-discovery-pkg'
   - '@spalx/transport-pkg'
+  - '@spalx/app-life-cycle-pkg'

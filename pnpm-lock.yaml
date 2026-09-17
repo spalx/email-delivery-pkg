@@ -9,21 +9,21 @@ importers:
   .:
     dependencies:
       '@spalx/app-life-cycle-pkg':
+        specifier: ^1.1.0
+        version: 1.1.0
+      '@spalx/service-discovery-pkg':
         specifier: ^1.0.8
         version: 1.0.8
-      '@spalx/service-discovery-pkg':
-        specifier: ^1.0.7
-        version: 1.0.7
       '@spalx/transport-pkg':
-        specifier: ^1.3.0
-        version: 1.3.0
+        specifier: ^1.3.1
+        version: 1.3.1
       zod:
         specifier: ^4.6.5
         version: 4.6.5
     devDependencies:
       '@types/node':
         specifier: ^22.20.2
-        version: 22.20.2
+        version: 22.20.3
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
@@ -44,8 +44,8 @@ packages:
   '@so-ric/colorspace@1.1.6':
     resolution: {integrity: sha512-/KiKkpHNOBgkFJwu9sh48LkHSMYGyuTcSFK/qMBdnOAlrRJzRSXAOFB5qwzaVQuDl8wAvHVMkaASQDReTahxuw==}
 
-  '@spalx/app-life-cycle-pkg@1.0.8':
-    resolution: {integrity: sha512-oSEjrTZ6b4zOFOr1oGh2pfse1mnV0QeT95zcjGa33ZJnsb9ZxtsYFRT8KbwdVwrCFXGczsQCTKmG6/W6bkO1Dg==}
+  '@spalx/app-life-cycle-pkg@1.1.0':
+    resolution: {integrity: sha512-wMAn6unjQQDmMqlS6BxoGVuwjJELJD1OurWqRxVq82uIDJicebKAfrF7t9hLB1HnjtgBpLy8Th9nlo3XuZEc3A==}
 
   '@spalx/common-loggers-pkg@1.0.5':
     resolution: {integrity: sha512-FEHMa5acebl20gH+76YgBPdBT49ZuyKHecjQONYkiHWdsXxFaQCmSJTVNKSLZWD+ZOkSAz9AWizvfO1etdWaQQ==}
@@ -53,14 +53,14 @@ packages:
   '@spalx/rest-pkg@1.0.8':
     resolution: {integrity: sha512-Y14dMhhiXBTpWz7T/3EJDn1de9Rm0QpxWml9tdPhGV3RSakNS5ICr1fxq0Na+q8SpHOBpYYWN1h0Osod4L+dnQ==}
 
-  '@spalx/service-discovery-pkg@1.0.7':
-    resolution: {integrity: sha512-bu2ajmH09Ner/mGlE/D//fwyeio5IP0yklQFJS/SnvL1Rc469ZQOptPiS7iKhdvDBtQfJh7hM9byokEJduZI5Q==}
+  '@spalx/service-discovery-pkg@1.0.8':
+    resolution: {integrity: sha512-uJelN8By8/RpxszZeECMxMuy3EyrzTSBTIVeejxS0sFWDaMevSJW6POxRA7ZE5W4yIrxGdUd/7wFgUPmXMHnKw==}
 
-  '@spalx/transport-pkg@1.3.0':
-    resolution: {integrity: sha512-jkT62SJDIuEmg97X7D9QLg45/bpKmq7bo9PNzbfRbtSzevQ1GpS3Wh5gtWrBDL9DXFqGpf1Rfq5aUCpHyQ06NA==}
+  '@spalx/transport-pkg@1.3.1':
+    resolution: {integrity: sha512-pMr2nqXSo8DWUxp7MHzDhlznNgVNrMaU/Z49cfiBfEOZNMGnl0LVWQbSaKi7WwcQdQvYNbnj5SVvQwU9QgPunw==}
 
-  '@types/node@22.20.2':
-    resolution: {integrity: sha512-xlvWf4Vs9n1PEVYwP1n4vvG07M6y8WgvJ2t0vbrWTmijsIHp1cS+uJ2kMIRdY3nHZK0nCYKrPeD171+SzF4/zw==}
+  '@types/node@22.20.3':
+    resolution: {integrity: sha512-DZmzkmwHzXrLPAXPyKNDzlIwMMUZCVacoD25ywdy5YTKGbOx/2ld+Q38Im2zJ0vBuZP5Prd3VZutKZyXwkOS8A==}
 
   '@types/triple-beam@1.3.5':
     resolution: {integrity: sha512-6WaYesThRMCl19iryMYP7/x2OVgCtbIVflDGFpWnb9irXI3UjYE4AzmYuiUKY1AJstGijoY+MgUszMgRxIYTYw==}
@@ -387,7 +387,7 @@ snapshots:
       color: 5.0.3
       text-hex: 1.0.0
 
-  '@spalx/app-life-cycle-pkg@1.0.8':
+  '@spalx/app-life-cycle-pkg@1.1.0':
     dependencies:
       '@spalx/common-loggers-pkg': 1.0.5
 
@@ -401,20 +401,20 @@ snapshots:
       qs: 6.16.0
       zod: 4.6.5
 
-  '@spalx/service-discovery-pkg@1.0.7':
+  '@spalx/service-discovery-pkg@1.0.8':
     dependencies:
-      '@spalx/app-life-cycle-pkg': 1.0.8
+      '@spalx/app-life-cycle-pkg': 1.1.0
       '@spalx/common-loggers-pkg': 1.0.5
-      '@spalx/transport-pkg': 1.3.0
+      '@spalx/transport-pkg': 1.3.1
       zod: 4.6.5
 
-  '@spalx/transport-pkg@1.3.0':
+  '@spalx/transport-pkg@1.3.1':
     dependencies:
-      '@spalx/app-life-cycle-pkg': 1.0.8
+      '@spalx/app-life-cycle-pkg': 1.1.0
       '@spalx/rest-pkg': 1.0.8
       zod: 4.6.5
 
-  '@types/node@22.20.2':
+  '@types/node@22.20.3':
     dependencies:
       undici-types: 6.21.0
 
